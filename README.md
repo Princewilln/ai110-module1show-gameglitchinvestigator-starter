@@ -57,7 +57,18 @@ Fixed. Now the displayed range will dynamically update — Easy shows "1 and 20"
 
 Fixed st.session_state.secret = random.randint(1, 100) to the low and high variable so its stay dynamic to the dificulty level that is selected.
 
-I change the comparison to cast secret to integer in the except TypeError block.
+I change the comparison to cast secret to integer in the except TypeError block by refactoring the code and adding some new blocks of code.
+
+"""
+if st.session_state.difficulty != difficulty:
+    st.session_state.difficulty = difficulty
+    st.session_state.secret = random.randint(low, high)
+    st.session_state.attempts = 0
+    st.session_state.score = 0
+    st.session_state.status = "playing"
+    st.session_state.history = []
+"""
+
 
 ## 📸 Demo Walkthrough
 
