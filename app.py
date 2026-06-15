@@ -95,7 +95,7 @@ if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
 if "attempts" not in st.session_state:
-    st.session_state.attempts = 1  # FIXME: Logic breaks here
+    st.session_state.attempts = 0
 
 if "score" not in st.session_state:
     st.session_state.score = 0
