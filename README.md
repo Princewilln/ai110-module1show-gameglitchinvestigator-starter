@@ -38,6 +38,8 @@ The game specified a range 1 - 100, but it accepts number higher than 100 or les
 
 When the dificulty is changed the range of input does not change to match the range defined for the leve of difficulty.
 
+I  also noticed that when a new game starts the sceret is always between range 1-100 which could be out of range for other difficulty levels
+
 - [ ] Explain what fixes you applied.
 guess > secret → the guess is too high → tell the player to go LOWER insted of go HIGHER it had prior
 guess < secret (the else) → the guess is too low → tell the player to go HIGHER instead of go LOWER it had prior.
