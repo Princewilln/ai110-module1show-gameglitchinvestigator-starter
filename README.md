@@ -63,11 +63,11 @@ I change the comparison to cast secret to integer in the except TypeError block.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. <!-- Describe this step --> user enter 101
+2. <!-- Describe this step --> game returns out of range (range of selected difficulty) chose a numebr with the difficulty range
+3. <!-- Describe this step --> Game accepts the numbers withing the range and suggest the right direction towared the number line
+4. <!-- Describe this step --> game displays the correct attempts left
+5. <!-- Add more steps as needed --> game ends after the correct guess 
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
@@ -77,7 +77,31 @@ Describe your fixed game in numbered steps so a reader can follow along without 
 # Paste your pytest output here, e.g.:
 # pytest tests/
 # ========================= X passed in 0.XXs =========================
-```
+``
+============================= test session starts ==============================
+platform linux -- Python 3.13.13, pytest-9.0.3, pluggy-1.6.0 -- /home/meltingtech/codepath/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/meltingtech/codepath/ai110-module1show-gameglitchinvestigator-starter
+plugins: anyio-4.13.0
+collecting ... collected 15 items
+
+tests/test_game_logic.py::test_winning_guess PASSED                      [  6%]
+tests/test_game_logic.py::test_guess_too_high_returns_go_lower PASSED    [ 13%]
+tests/test_game_logic.py::test_guess_too_low_returns_go_higher PASSED    [ 20%]
+tests/test_game_logic.py::test_string_secret_high_guess_returns_go_lower PASSED [ 26%]
+tests/test_game_logic.py::test_string_secret_low_guess_returns_go_higher PASSED [ 33%]
+tests/test_game_logic.py::test_string_secret_exact_match_is_win PASSED   [ 40%]
+tests/test_game_logic.py::test_parse_guess_rejects_above_range PASSED    [ 46%]
+tests/test_game_logic.py::test_parse_guess_rejects_below_range PASSED    [ 53%]
+tests/test_game_logic.py::test_parse_guess_accepts_within_range PASSED   [ 60%]
+tests/test_game_logic.py::test_parse_guess_rejects_non_number PASSED     [ 66%]
+tests/test_game_logic.py::test_parse_guess_rejects_empty PASSED          [ 73%]
+tests/test_game_logic.py::test_easy_range PASSED                         [ 80%]
+tests/test_game_logic.py::test_normal_range PASSED                       [ 86%]
+tests/test_game_logic.py::test_hard_range PASSED                         [ 93%]
+tests/test_game_logic.py::test_easy_range_smaller_than_normal PASSED     [100%]
+
+============================== 15 passed in 0.02s ==============================
 
 ## 🚀 Stretch Features
 
