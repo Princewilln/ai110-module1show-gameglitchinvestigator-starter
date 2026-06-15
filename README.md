@@ -40,6 +40,8 @@ When the dificulty is changed the range of input does not change to match the ra
 
 I  also noticed that when a new game starts the sceret is always between range 1-100 which could be out of range for other difficulty levels
 
+I also noticed it uses string comparison to compare guess number and secret, which breaks the logic. is many case it will say go lowey if the string for exampl 5 and 10, is greater than 10 when compare via charater.
+
 - [ ] Explain what fixes you applied.
 guess > secret → the guess is too high → tell the player to go LOWER insted of go HIGHER it had prior
 guess < secret (the else) → the guess is too low → tell the player to go HIGHER instead of go LOWER it had prior.
@@ -52,6 +54,10 @@ fix the Enter your guess: not to accept inputs that are out of range. parse_gues
 at range with a clear error message
 
 Fixed. Now the displayed range will dynamically update — Easy shows "1 and 20", Normal "1 and 100", Hard "1 and 50" — matching what the game actually uses.
+
+Fixed st.session_state.secret = random.randint(1, 100) to the low and high variable so its stay dynamic to the dificulty level that is selected.
+
+I change the comparison to cast secret to integer in the except TypeError block.
 
 ## 📸 Demo Walkthrough
 
