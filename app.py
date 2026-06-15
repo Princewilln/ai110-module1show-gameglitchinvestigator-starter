@@ -2,7 +2,7 @@ import random
 import streamlit as st
 
 
-def get_range_for_difficulty(difficulty: str):
+def get_range_for_difficulty(difficulty: str):  # FIXME: Logic breaks here
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
@@ -12,7 +12,7 @@ def get_range_for_difficulty(difficulty: str):
     return 1, 100
 
 
-def parse_guess(raw: str):
+def parse_guess(raw: str, low: int, high: int):
     if raw is None:
         return False, None, "Enter a guess."
 
@@ -26,6 +26,9 @@ def parse_guess(raw: str):
             value = int(raw)
     except Exception:
         return False, None, "That is not a number."
+
+    if value < low or value > high:
+        return False, None, f"Guess must be between {low} and {high}."
 
     return True, value, None
 
@@ -146,7 +149,7 @@ if st.session_state.status != "playing":
 if submit:
     st.session_state.attempts += 1
 
-    ok, guess_int, err = parse_guess(raw_guess)
+    ok, guess_int, err = parse_guess(raw_guess, low, high)
 
     if not ok:
         st.session_state.history.append(raw_guess)
