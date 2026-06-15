@@ -79,9 +79,9 @@ difficulty = st.sidebar.selectbox(
     index=1,
 )
 
-attempt_limit_map = {  # FIXME: Logic breaks here
-    "Easy": 6,
-    "Normal": 8,
+attempt_limit_map = {
+    "Easy": 10,
+    "Normal": 7,
     "Hard": 5,
 }
 attempt_limit = attempt_limit_map[difficulty]
@@ -95,7 +95,7 @@ if "secret" not in st.session_state:
     st.session_state.secret = random.randint(low, high)
 
 if "attempts" not in st.session_state:
-    st.session_state.attempts = 1
+    st.session_state.attempts = 1  # FIXME: Logic breaks here
 
 if "score" not in st.session_state:
     st.session_state.score = 0
