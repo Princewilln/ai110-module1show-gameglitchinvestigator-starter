@@ -14,9 +14,9 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| 2     | To Low            |   To High       |     "📉 Go HIGHER!"    |
+|no input| attempt left 8   |atempt left 7    |Guess a number between 1 and 100. Attempts left: 7
+| Easy| Range 1 to 20       | 1 t0 100        |Range: 1 to 100         |
 
 ---
 
