@@ -84,7 +84,7 @@ difficulty = st.sidebar.selectbox(
 
 attempt_limit_map = {
     "Easy": 10,
-    "Normal": 7,
+    "Normal": 8,
     "Hard": 5,
 }
 attempt_limit = attempt_limit_map[difficulty]
@@ -112,7 +112,7 @@ if "history" not in st.session_state:
 st.subheader("Make a guess")
 
 st.info(
-    f"Guess a number between 1 and 100. "
+    f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
